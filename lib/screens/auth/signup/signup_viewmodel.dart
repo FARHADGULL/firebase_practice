@@ -26,6 +26,9 @@ class SignUpViewModel extends GetxController {
           password: passwordController.text.trim(),
         );
       }
+      emailController.clear();
+      passwordController.clear();
+      confirmPasswordController.clear();
 
       GlobalVariable.showLoader.value = false;
     } catch (e) {

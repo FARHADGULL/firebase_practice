@@ -1,6 +1,5 @@
 import 'package:firebase_practice/screens/auth/signup/signup_viewmodel.dart';
 import 'package:firebase_practice/widgets/loader_view.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
