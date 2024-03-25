@@ -26,6 +26,8 @@ class LoginViewModel extends GetxController {
           password: passwordController.text.trim(),
         );
       }
+      emailController.clear();
+      passwordController.clear();
 
       GlobalVariable.showLoader.value = false;
     } on FirebaseAuthException catch (e) {
