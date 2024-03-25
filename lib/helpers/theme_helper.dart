@@ -1,8 +1,7 @@
-import 'package:firebase_auth/helpers/app_colors.dart';
+import 'package:firebase_practice/helpers/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ThemeHelper {
   static final textTheme = Theme.of(Get.context!).textTheme;
@@ -201,6 +200,6 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
       ).apply(
-        fontFamily: GoogleFonts.inter().fontFamily,
-      );
+          //fontFamily: GoogleFonts.inter().fontFamily,
+          );
 }
