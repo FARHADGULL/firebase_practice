@@ -1,11 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_practice/firebase_options.dart';
 import 'package:firebase_practice/helpers/app_routes.dart';
+import 'package:firebase_practice/screens/auth/auth_page.dart';
+import 'package:firebase_practice/screens/home/home_view.dart';
+import 'package:firebase_practice/screens/auth/signup/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'helpers/theme_helper.dart';
-import 'screens/login/login_view.dart';
+import 'screens/auth/login/login_view.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +29,24 @@ class MyApp extends StatelessWidget {
       title: 'Firebase Auth',
       theme: ThemeHelper.lightTheme,
       //darkTheme: ThemeHelper.darkTheme,
-      home: LoginView(), // Added this line to set the initial route
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (snapshot.hasError) {
+            return const Center(
+              child: Text('Something went wrong!'),
+            );
+          } else if (snapshot.hasData) {
+            return HomeView();
+          } else {
+            return AuthPage();
+          }
+        },
+      ),
       getPages: AppRoutes()
           .getRoutes(), // Added this line to register routes in the app
     );
