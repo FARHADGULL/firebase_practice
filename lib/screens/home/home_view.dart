@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
-              Obx(() => Text('WELCOME!\n${viewModel.user}')),
+              Text('WELCOME!\n${viewModel.user.email}'),
               const SizedBox(height: 20),
               Center(
                 child: ElevatedButton(
