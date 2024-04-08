@@ -15,18 +15,23 @@ class AuthPage extends StatelessWidget {
       appBar: AppBar(
         title: Obx(() => Text(viewModel.isSignup.value ? 'Log In' : 'Sign Up')),
       ),
-      body: Obx(() => viewModel.isSignup.value ? LoginView() : SignUpView()),
+      body: Obx(
+        () => viewModel.isSignup.value ? LoginView() : SignUpView(),
+      ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Obx(() => Text(viewModel.isSignup.value
-                ? 'Don\'t have an account?'
-                : 'Already have an account? ')),
+            Obx(
+              () => Text(viewModel.isSignup.value
+                  ? 'Don\'t have an account?'
+                  : 'Already have an account? '),
+            ),
             TextButton(
               onPressed: viewModel.toggleAuth,
               child: Obx(
-                  () => Text(viewModel.isSignup.value ? 'Sign Up' : 'Log In')),
+                () => Text(viewModel.isSignup.value ? 'Sign Up' : 'Log In'),
+              ),
             ),
           ],
         ),
