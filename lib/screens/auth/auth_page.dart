@@ -30,7 +30,7 @@ class AuthPage extends StatelessWidget {
             TextButton(
               onPressed: viewModel.toggleAuth,
               child: Obx(
-                () => Text(viewModel.isSignup.value ? 'Sign Up' : 'Log In'),
+                () => Text(viewModel.isSignup.value ? 'Log In' : 'Sign Up'),
               ),
             ),
           ],
