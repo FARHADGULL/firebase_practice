@@ -20,55 +20,68 @@ class LoginView extends StatelessWidget {
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 25),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextField(
-                    controller: loginViewModel.emailController,
-                    decoration: const InputDecoration(
-                      labelText: 'Email',
-                      hintText: 'Enter your email',
+              child: Form(
+                key: loginViewModel.signInFormKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextFormField(
+                      controller: loginViewModel.emailController,
+                      decoration: const InputDecoration(
+                        labelText: 'Email',
+                        hintText: 'Enter your email',
+                      ),
+                      textInputAction: TextInputAction.next,
+                      validator: (value) => value!.isEmpty ? 'Required' : null,
                     ),
-                    textInputAction: TextInputAction.next,
-                  ),
-                  const SizedBox(height: 20),
-                  TextField(
-                    controller: loginViewModel.passwordController,
-                    decoration: const InputDecoration(
-                      labelText: 'Password',
-                      hintText: 'Enter your password',
+                    const SizedBox(height: 20),
+                    TextFormField(
+                      controller: loginViewModel.passwordController,
+                      decoration: const InputDecoration(
+                        labelText: 'Password',
+                        hintText: 'Enter your password',
+                      ),
+                      textInputAction: TextInputAction.done,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Required';
+                        } else if (value.length < 6) {
+                          return 'Password must be at least 6 characters';
+                        } else {
+                          return null;
+                        }
+                      },
                     ),
-                    textInputAction: TextInputAction.done,
-                    obscureText: true,
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: ElevatedButton(
-                      onPressed: loginViewModel.signIn,
-                      child: const Text('Sign In'),
+                    const SizedBox(height: 20),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: loginViewModel.signIn,
+                        child: const Text('Sign In'),
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                  // RichText(
-                  //   text: TextSpan(
-                  //     text: 'Don\'t have an account? ',
-                  //     style: const TextStyle(color: Colors.black),
-                  //     children: [
-                  //       TextSpan(
-                  //         text: 'Sign Up',
-                  //         style: const TextStyle(
-                  //           color: Colors.blue,
-                  //           fontWeight: FontWeight.bold,
-                  //         ),
-                  //         recognizer: TapGestureRecognizer()
-                  //           ..onTap = () {
-                  //             Get.toNamed('/signUpView');
-                  //           },
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
-                ],
+                    const SizedBox(height: 20),
+                    // RichText(
+                    //   text: TextSpan(
+                    //     text: 'Don\'t have an account? ',
+                    //     style: const TextStyle(color: Colors.black),
+                    //     children: [
+                    //       TextSpan(
+                    //         text: 'Sign Up',
+                    //         style: const TextStyle(
+                    //           color: Colors.blue,
+                    //           fontWeight: FontWeight.bold,
+                    //         ),
+                    //         recognizer: TapGestureRecognizer()
+                    //           ..onTap = () {
+                    //             Get.toNamed('/signUpView');
+                    //           },
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                  ],
+                ),
               ),
             ),
           ),
