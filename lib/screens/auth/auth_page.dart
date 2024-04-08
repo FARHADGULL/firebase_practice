@@ -13,7 +13,9 @@ class AuthPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Obx(() => Text(viewModel.isSignup.value ? 'Log In' : 'Sign Up')),
+        title: Obx(
+          () => Text(viewModel.isSignup.value ? 'Log In' : 'Sign Up'),
+        ),
       ),
       body: Obx(
         () => viewModel.isSignup.value ? LoginView() : SignUpView(),
