@@ -12,9 +12,6 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Login'),
-      // ),
       body: Stack(
         children: [
           SingleChildScrollView(
