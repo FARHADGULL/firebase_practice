@@ -75,17 +75,6 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                     ),
-
-                    //           fontWeight: FontWeight.bold,
-                    //         ),
-                    //         recognizer: TapGestureRecognizer()
-                    //           ..onTap = () {
-                    //             Get.toNamed('/signUpView');
-                    //           },
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
