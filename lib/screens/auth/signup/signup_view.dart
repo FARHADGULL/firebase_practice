@@ -79,10 +79,6 @@ class SignUpView extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
 
-                    //     style: const TextStyle(color: Colors.black),
-                    //     children: [
-                    //       TextSpan(
-                    //         text: 'Sign In',
                     //         style: const TextStyle(
                     //           color: Colors.blue,
                     //         ),
