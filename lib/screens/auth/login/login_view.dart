@@ -75,11 +75,7 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // RichText(
-                    //   text: TextSpan(
-                    //     text: 'Don\'t have an account? ',
-                    //     style: const TextStyle(color: Colors.black),
-                    //     children: [
+
                     //       TextSpan(
                     //         text: 'Sign Up',
                     //         style: const TextStyle(
