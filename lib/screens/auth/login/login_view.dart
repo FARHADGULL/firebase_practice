@@ -76,10 +76,6 @@ class LoginView extends StatelessWidget {
                       ),
                     ),
 
-                    //       TextSpan(
-                    //         text: 'Sign Up',
-                    //         style: const TextStyle(
-                    //           color: Colors.blue,
                     //           fontWeight: FontWeight.bold,
                     //         ),
                     //         recognizer: TapGestureRecognizer()
