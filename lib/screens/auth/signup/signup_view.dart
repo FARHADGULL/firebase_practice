@@ -78,9 +78,7 @@ class SignUpView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    // RichText(
-                    //   text: TextSpan(
-                    //     text: 'Already have an account? ',
+
                     //     style: const TextStyle(color: Colors.black),
                     //     children: [
                     //       TextSpan(
