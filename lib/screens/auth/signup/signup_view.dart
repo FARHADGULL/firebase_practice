@@ -79,9 +79,6 @@ class SignUpView extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
 
-                    //         style: const TextStyle(
-                    //           color: Colors.blue,
-                    //         ),
                     //         recognizer: TapGestureRecognizer()
                     //           ..onTap = () {
                     //             Navigator.of(context).pop();
