@@ -61,6 +61,20 @@ class LoginView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed('/signUpView');
+                      },
+                      child: const Center(
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
                     // RichText(
                     //   text: TextSpan(
                     //     text: 'Don\'t have an account? ',
