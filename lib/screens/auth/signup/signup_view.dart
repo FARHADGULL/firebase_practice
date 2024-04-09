@@ -78,15 +78,6 @@ class SignUpView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-
-                    //         recognizer: TapGestureRecognizer()
-                    //           ..onTap = () {
-                    //             Navigator.of(context).pop();
-                    //           },
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
